@@ -69,6 +69,9 @@ namespace WindowsFormsApp1
             var decimalCostValidateSuccess = decimal.TryParse(normalizedCost, out decimal cost);
             var decimalVolumeValidateSuccess = decimal.TryParse(normalizedVolume, out decimal volume);
 
+            // TODO: These would be a lot cleaner refactored to use C# ValueTuples.
+            // http://www.devsanon.com/c/understanding-c-7-valuetuples/
+            // Example new method: `public (bool Success, decimal Result) TryParseDecimal(string decimalStr){... }`
             if (!decimalCostValidateSuccess)
             {
                 ErrorLabel.Text = "Cost must be a valid decimal.";
